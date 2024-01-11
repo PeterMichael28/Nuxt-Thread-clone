@@ -40,7 +40,7 @@
                     <img 
                         v-if="post && post.picture"
                         class="mx-auto w-full mt-2 pr-2 rounded" 
-                        :src="runtimeConfig.public.bucketUrl + post.picture" 
+                        :src="runtimeConfig.bucketUrl + post.picture" 
                     />
 
                     <div class="absolute mt-2 w-full ml-2">
@@ -98,7 +98,7 @@
 import { useUserStore } from '~/stores/user';
 const userStore = useUserStore()
 
-const runtimeConfig = useRuntimeConfig()
+const runtimeConfig = ''
 let isMenu = ref(false)
 let isLike = ref(false)
 let isDeleting = ref(false)
@@ -196,3 +196,4 @@ const likesFunc = () => {
     likePost(props.post.id)
 }
 </script>
+

@@ -17,43 +17,43 @@
 import MainLayout from '~/layouts/MainLayout.vue';
 import { useUserStore } from '~/stores/user';
 const userStore = useUserStore()
-const user = null
-// const user = useSupabaseUser()
+
+const user = useSupabaseUser()
 
 let posts = ref([])
 let isPosts = ref(false)
 let isLoading = ref(false)
 
-// watchEffect(() => {
-//     if (!user.value) {
-//         return navigateTo('/auth')
-//     }
-// })
+watchEffect(() => {
+    if (!user.value) {
+        return navigateTo('/auth')
+    }
+})
 
-// onBeforeMount(async () => {
-//     try {
-//         isLoading.value = true
-//         await userStore.getAllPosts()
-//         isLoading.value = false
-//     } catch (error) {
-//         console.log(error)
-//     }
-// })
+onBeforeMount(async () => {
+    try {
+        isLoading.value = true
+        await userStore.getAllPosts()
+        isLoading.value = false
+    } catch (error) {
+        console.log(error)
+    }
+})
 
-// onMounted(() => {
-//     watchEffect(() => {
-//         if (userStore.posts && userStore.posts.length >= 1) {
-//             posts.value = userStore.posts
-//             isPosts.value = true
-//         }
-//     })
-// })
+onMounted(() => {
+    watchEffect(() => {
+        if (userStore.posts && userStore.posts.length >= 1) {
+            posts.value = userStore.posts
+            isPosts.value = true
+        }
+    })
+})
 
-// watch(() => posts.value, () => {
-//     if (userStore.posts && userStore.posts.length >= 1) {
-//         posts.value = userStore.posts
-//         isPosts.value = true
-//     }
-// }, { deep: true })
+watch(() => posts.value, () => {
+    if (userStore.posts && userStore.posts.length >= 1) {
+        posts.value = userStore.posts
+        isPosts.value = true
+    }
+}, { deep: true })
 </script>
 
