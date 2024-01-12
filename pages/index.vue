@@ -44,7 +44,7 @@ let isLoading = ref(false)
 
 watchEffect(() => {
     if (!user.value) {
-        return navigateTo('/auth')
+        return navigateTo('/login')
     }
 
 })
