@@ -40,7 +40,7 @@
                     <img 
                         v-if="post && post.picture"
                         class="mx-auto w-full mt-2 pr-2 rounded" 
-                        :src="runtimeConfig.bucketUrl + post.picture" 
+                        :src="'https://zyaekcihjyydqsjkpbyi.supabase.co/storage/v1/object/public/nuxt-thread-files/' + post.picture" 
                     />
 
                     <div class="absolute mt-2 w-full ml-2">
@@ -131,7 +131,7 @@ const deletePost = async (id, picture) => {
         isDeleting.value = true
         const { data, error } = await client
             .storage
-            .from('threads-c-files')
+            .from('nuxt-thread-files')
             .remove([picture])
 
         await useFetch(`/api/delete-post/${id}`, { method: 'DELETE' })

@@ -8,6 +8,7 @@
                         clearData();
                     "
                     class="rounded-full px-2"
+                    
                 >
                     <Icon name="mdi:close" size="25"/>
                 </button>
@@ -122,7 +123,7 @@ const createPost = async () => {
     if (fileData.value) {
         const { data, error } = await client
             .storage
-            .from('threads-c-files')
+            .from('nuxt-thread-files')
             .upload(`${uuidv4()}.jpg`, fileData.value)
 
         dataOut = data;
