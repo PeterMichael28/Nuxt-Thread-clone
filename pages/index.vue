@@ -41,10 +41,12 @@ let posts = ref([])
 let isPosts = ref(false)
 let isLoading = ref(false)
 
+
 watchEffect(() => {
     if (!user.value) {
         return navigateTo('/auth')
     }
+
 })
 
 onBeforeMount(async () => {
