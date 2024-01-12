@@ -4,7 +4,7 @@
             <div class="mx-auto max-w-[500px] overflow-hidden">
                 <div id="Posts" class="px-4 max-w-[600px] mx-auto" >
                     <div v-if="isPosts" v-for="post in posts" :key="post">
-                        {{ post }}
+                       
                         <Post :post="post" @isDeleted="posts = userStore.getAllPosts()" />
                     </div>
                 </div>
@@ -12,6 +12,8 @@
         </div>
     </MainLayout>
 </template>
+
+
 
 <script setup>
 import MainLayout from '~/layouts/MainLayout.vue';

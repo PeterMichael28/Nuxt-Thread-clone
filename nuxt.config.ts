@@ -38,6 +38,15 @@ export default defineNuxtConfig({
   //     type: "module",
   //   },
   // },
+  supabase: {
+    // Options
+    redirectOptions: {
+      login: '/auth',
+      callback: '/',
+      exclude: [],
+    }
+  
+  },
   app: {
     head: {
       charset: 'utf-8',
