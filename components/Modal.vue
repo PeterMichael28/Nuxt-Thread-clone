@@ -28,3 +28,4 @@ const logout = () => {
     return navigateTo('/')
 }
 </script>
+<!-- Makinde,s288 -->
