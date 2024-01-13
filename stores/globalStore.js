@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useUserStore = defineStore('posts', {
+export const useUserStore = defineStore('global', {
   state: () => ({
     posts: [],
     isMenuOverlay: false,
