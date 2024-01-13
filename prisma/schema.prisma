@@ -27,4 +27,3 @@ model Likes {
   post      Posts    @relation(fields: [postId], references: [id], onDelete: Cascade)
 }
 
-// prisma error
